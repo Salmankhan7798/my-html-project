@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Building Docker image...
+      - docker build -t htmlproject .
+  post_build:
+    commands:
+      - echo creating docker container...
+      - docker run -itd -p 8080:8080 htmlproject:latest
