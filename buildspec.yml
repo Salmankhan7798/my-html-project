@@ -8,11 +8,12 @@ env:
 phases:
   install:
     runtime-versions:
-      python: 3.11
+      nodejs: 12
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt
+      - npm install
+      - npm run build
   build:
     commands:
       #- echo "Running tests..."
